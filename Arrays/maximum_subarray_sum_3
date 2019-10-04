@@ -1,5 +1,6 @@
 // this is the best possible way to get the maximum array sum.
 // it uses the kadane's algo
+// this algo does the required job in O(N).
 
 #include <iostream>
 #include <limits.h>
