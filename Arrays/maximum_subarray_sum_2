@@ -1,5 +1,7 @@
 // this is the code for the Method-2, to calculate the maximum subarray sum, which uses the cumulative sum principle.
 
+// this code does the required job in O(N^2).
+
 #include <iostream>
 #include <limits.h>
 using namespace std;
