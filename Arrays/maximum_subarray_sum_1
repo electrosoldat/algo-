@@ -1,1 +1,3 @@
 // https://ide.codingblocks.com/s/138429
+// this method does the required job in O(N^3).
+// due, to this its a not a very efficient method , despite of its simplicity.
