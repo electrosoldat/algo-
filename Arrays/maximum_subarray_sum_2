@@ -1,0 +1,61 @@
+// this is the code for the Method-2, to calculate the maximum subarray sum, which uses the cumulative sum principle.
+
+#include <iostream>
+#include <limits.h>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    int* arr = new int[N];
+
+    for(int i=0;i<N;i++)
+    {
+        cin >> arr[i];
+    }
+
+    // first,we will find the cumulative maximum subarray
+    int* cum_sum_arr = new int[N];
+    for(int i=0;i<N;i++)
+    {
+        if(i==0)
+        {
+            cum_sum_arr[i] = arr[i];
+        }
+        else
+        {
+            cum_sum_arr[i] = cum_sum_arr[i-1] + arr[i];
+        }
+    }
+
+    // let us try and print the cumulative sum array
+    /*for(int i=0;i<N;i++)
+    {
+        cout << cum_sum_arr[i] << " ";
+    }*/
+
+    int ans = INT_MIN;  
+    int left = -1;
+    int right = -1;
+
+    for(int i=0;i<N;i++)
+    {
+        for(int j=i;j<N;j++)
+        {
+            int cur_sum = cum_sum_arr[j] - cum_sum_arr[i-1];
+            cout << cur_sum << " ; ";
+            if(cur_sum > ans)
+            {
+                ans = cur_sum;
+                left = i;
+                right = j;
+            }
+        }
+        cout << "\n%\n";
+    }
+
+    cout << ans << endl;
+    cout << left << " " << right;
+
+    return 0;
+
+}
