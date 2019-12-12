@@ -52,6 +52,8 @@ void spiral_print(int arr[10][10], int nr, int nc)
         end_col-- ;
 
         // Print end_row from end_col to start_col and decrement end_row by 1
+        // Make sure it is print ed only if start_row < end_row. 
+        // ## Similar conditions must be usd for all the 4 loops , in case of odd no. of columns or rows.
         for(int j=end_col;j>=start_col;j--)
         {
             cout << arr[end_row][j] << " ";
