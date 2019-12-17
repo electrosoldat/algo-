@@ -1,3 +1,48 @@
 // https://ide.codingblocks.com/s/138429
 // this method does the required job in O(N^3).
 // due, to this its a not a very efficient method , despite of its simplicity.
+
+#include <iostream>
+#include <limits.h>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+
+    int* arr = new int[N];
+
+    for(int i=0;i<N;i++)
+    {
+        cin >> arr[i];
+    }
+
+    int ans_max_sum = INT_MIN;
+    int left = -1;
+    int right = -1;
+    for(int i=0;i<N;i++)
+    {
+        for(int j=i;j<N;j++)
+        {
+            int cur_sum=0;
+            for(int k=i;k<=j;k++)
+            {
+                cur_sum += arr[k];
+            }
+            //cout << cur_sum << endl;
+            if(cur_sum > ans_max_sum)
+            {
+                ans_max_sum = cur_sum;
+                left = i;
+                right = j;
+            }
+        }
+    }
+
+    cout << ans_max_sum << endl;
+    for(int h=left;h<=right;h++)
+    {
+        cout << arr[h] << " ";
+    }
+
+    return 0;
+}
