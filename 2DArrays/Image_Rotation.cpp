@@ -1,5 +1,5 @@
 // Image rotation problem
-// Basically, to rotate a 2D array by 90 deg.
+// Basically, to rotate a 2D array by 90 deg. clockise
 
 #include <iostream>
 using namespace std;
