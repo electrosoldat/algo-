@@ -11,6 +11,7 @@ using namespace std;
 int getbit(int n,int i)
 {
 	int bit = ((n & (1 << i)) > 0) ? 1 : 0;
+	// here, (1 << i) is the mask.
 	return bit;
 }
 int main()
