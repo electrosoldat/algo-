@@ -1,5 +1,9 @@
 // give a number n, return the bit at its ith position.
-// Check whether a number is odd/even by using bitwise operators
+// Check whether a number is odd/even by using bitwise operators.
+
+// To solve this problem, we use a mask.
+// mask is such that it has 1 at the ith position and 0 at all other positioins.
+// The number is then ANDed with this mask to get the desired bit.
 
 #include <iostream>
 using namespace std;
