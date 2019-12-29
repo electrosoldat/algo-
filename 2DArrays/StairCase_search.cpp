@@ -46,9 +46,13 @@ int main() {
     // the algo is simple 
     // if the element to be searched is greater than the current value, then go down, else go left.
 
-    while(arr[r][c] != N)
+    while(r<nr && c>=0)
     {
-        if(N > arr[r][c])
+        if(N == arr[r][c])
+        {
+            break;
+        }
+        else if(N > arr[r][c])
         {
             r += 1;
         }
@@ -56,8 +60,16 @@ int main() {
             c -= 1;
         }
     }
-
-    cout << r << " " << c;
+    
+    if(r>=nr || c<0)
+    {
+        cout << "Not Found" << endl;
+    }
+    else
+    {
+        cout << "Found at : ";
+        cout << r << " " << c;
+    }
     
     return 0;
 }
